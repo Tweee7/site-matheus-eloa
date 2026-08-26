@@ -1,83 +1,313 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para você ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <title>Para você ❤️</title>
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #180a12, #57152f, #16080e);
-  color: white;
-  text-align: center;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-.card {
-  max-width: 500px;
-  padding: 40px 25px;
-  border-radius: 28px;
-  background: rgba(255,255,255,0.10);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.45);
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #180a12, #57152f, #8b234b);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      overflow-x: hidden;
+    }
 
-.heart {
-  font-size: 65px;
-}
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
 
-h1 {
-  font-size: 32px;
-  margin: 15px 0;
-}
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 25px;
+      animation: subir 8s linear infinite;
+      opacity: 0.7;
+    }
 
-p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #f8dce6;
-}
+    @keyframes subir {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
 
-a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 25px;
-  border-radius: 30px;
-  background: white;
-  color: #8d2149;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 17px;
-}
-</style>
+      20% {
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 35px 25px;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 28px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ffb6d2;
+      margin-top: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .heart-big {
+      font-size: 65px;
+      animation: pulsar 1.5s infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    .message {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+
+    .counter {
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255, 105, 150, 0.15);
+    }
+
+    .counter strong {
+      font-size: 24px;
+      color: #ffd1e1;
+    }
+
+    button {
+      border: none;
+      padding: 15px 25px;
+      border-radius: 30px;
+      background: #ff4f91;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 5px 20px rgba(255, 79, 145, 0.4);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    #surpresa {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      animation: aparecer 1s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .final {
+      margin-top: 35px;
+      font-size: 20px;
+      color: #ffd1e1;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="card">
+  <div class="hearts">
+    <div class="heart" style="left:5%; animation-delay:0s;">❤️</div>
+    <div class="heart" style="left:20%; animation-delay:2s;">💕</div>
+    <div class="heart" style="left:40%; animation-delay:4s;">💗</div>
+    <div class="heart" style="left:60%; animation-delay:1s;">💖</div>
+    <div class="heart" style="left:80%; animation-delay:3s;">❤️</div>
+    <div class="heart" style="left:90%; animation-delay:5s;">💕</div>
+  </div>
 
-<div class="heart">❤️</div>
+  <div class="card">
 
-<h1>Tenho uma coisa para você</h1>
+    <div class="heart-big">❤️</div>
 
-<p>
-Se você chegou até aqui, é porque escaneou o QR Code. 
-Agora toca no botão... preparei uma pequena surpresa para você. 💌
-</p>
+    <h1>Para você, meu amor</h1>
 
-<a href="https://chatgpt.com/share/6a8f6899-e4dc-83e9-966a-18579a034a05?ogimg=plain">
-Abrir minha surpresa 💕
-</a>
+    <p>
+      Eu fiz esse cantinho especialmente para você.
+      Não é apenas uma página...
+      é um pedacinho dos meus sentimentos colocado aqui.
+    </p>
 
-</div>
+    <div class="message">
+      <h2>💌 Uma mensagem para você</h2>
+
+      <p>
+        Talvez eu nem consiga colocar em palavras tudo aquilo
+        que sinto por você.
+      </p>
+
+      <p>
+        Mas quero que saiba que você é uma pessoa muito especial
+        para mim e que cada momento ao seu lado se torna uma
+        lembrança que eu quero guardar para sempre. ❤️
+      </p>
+
+      <p>
+        Eu escolheria você novamente, todos os dias.
+      </p>
+    </div>
+
+    <div class="counter">
+
+      <h2>🥰 Nosso tempo juntos</h2>
+
+      <p>
+        Desde o dia em que nossas histórias se encontraram,
+        muita coisa mudou.
+      </p>
+
+      <strong id="tempo">Carregando...</strong>
+
+    </div>
+
+    <h2>💖 Uma pequena surpresa</h2>
+
+    <p>
+      Clique no botão abaixo...
+    </p>
+
+    <button onclick="mostrarSurpresa()">
+      💌 Abrir minha surpresa
+    </button>
+
+    <div id="surpresa">
+
+      <h2>🔐 Só para você</h2>
+
+      <p>
+        Se eu pudesse escolher um lugar para estar agora,
+        seria ao seu lado.
+      </p>
+
+      <p>
+        Obrigado por fazer parte da minha vida.
+        Eu te amo. ❤️
+      </p>
+
+      <div style="font-size:45px;">
+        💕 💖 💗 💘 💝
+      </div>
+
+    </div>
+
+    <div class="final">
+      Feito com todo meu amor ❤️
+    </div>
+
+  </div>
+
+  <script>
+
+    /*
+      COLOQUE AQUI A DATA EM QUE VOCÊS COMEÇARAM A NAMORAR.
+
+      Exemplo:
+      const inicio = new Date("2025-06-15T00:00:00");
+    */
+
+    const inicio = new Date("2025-01-01T00:00:00");
+
+    function atualizarTempo() {
+
+      const agora = new Date();
+
+      let diferenca = agora - inicio;
+
+      if (diferenca < 0) {
+        document.getElementById("tempo").innerHTML =
+          "Nosso contador começa em breve ❤️";
+        return;
+      }
+
+      const segundos = Math.floor(diferenca / 1000);
+
+      const dias = Math.floor(segundos / 86400);
+
+      const horas = Math.floor(
+        (segundos % 86400) / 3600
+      );
+
+      const minutos = Math.floor(
+        (segundos % 3600) / 60
+      );
+
+      const seg = segundos % 60;
+
+      document.getElementById("tempo").innerHTML =
+        dias + " dias, " +
+        horas + " horas, " +
+        minutos + " minutos e " +
+        seg + " segundos ❤️";
+    }
+
+    atualizarTempo();
+
+    setInterval(atualizarTempo, 1000);
+
+    function mostrarSurpresa() {
+
+      const surpresa = document.getElementById("surpresa");
+
+      surpresa.style.display = "block";
+
+    }
+
+  </script>
 
 </body>
 </html>
