@@ -1,313 +1,473 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Para você ❤️</title>
+<title>Para ELOÁ BIANCA GOULART ❤️</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+*{
+  box-sizing:border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #180a12, #57152f, #8b234b);
-      color: white;
-      text-align: center;
-      padding: 25px;
-      overflow-x: hidden;
-    }
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  background:linear-gradient(135deg,#180a12,#57152f,#8b234b);
+  color:#fff;
+  text-align:center;
+  padding:25px;
+  overflow-x:hidden;
+}
 
-    .hearts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+}
 
-    .heart {
-      position: absolute;
-      bottom: -50px;
-      font-size: 25px;
-      animation: subir 8s linear infinite;
-      opacity: 0.7;
-    }
+.heart{
+  position:absolute;
+  bottom:-50px;
+  font-size:25px;
+  animation:subir 8s linear infinite;
+  opacity:.7;
+}
 
-    @keyframes subir {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
+@keyframes subir{
+  0%{
+    transform:translateY(0) rotate(0);
+    opacity:0;
+  }
 
-      20% {
-        opacity: 0.8;
-      }
+  20%{
+    opacity:.8;
+  }
 
-      100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
 
-    .card {
-      position: relative;
-      z-index: 1;
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 35px 25px;
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 28px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
-    }
+.card{
+  position:relative;
+  z-index:1;
+  max-width:650px;
+  margin:30px auto;
+  padding:35px 20px;
+  background:rgba(0,0,0,.35);
+  border-radius:28px;
+  box-shadow:0 10px 40px rgba(0,0,0,.4);
+  backdrop-filter:blur(8px);
+}
 
-    h1 {
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
+h1{
+  font-size:34px;
+  margin-bottom:10px;
+}
 
-    h2 {
-      color: #ffb6d2;
-      margin-top: 30px;
-    }
+h2{
+  color:#ffb6d2;
+  margin-top:30px;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-    }
+p{
+  font-size:18px;
+  line-height:1.7;
+}
 
-    .heart-big {
-      font-size: 65px;
-      animation: pulsar 1.5s infinite;
-    }
+.heart-big{
+  font-size:65px;
+  animation:pulsar 1.5s infinite;
+}
 
-    @keyframes pulsar {
-      0%, 100% {
-        transform: scale(1);
-      }
+@keyframes pulsar{
+  0%,100%{
+    transform:scale(1);
+  }
 
-      50% {
-        transform: scale(1.2);
-      }
-    }
+  50%{
+    transform:scale(1.2);
+  }
+}
 
-    .message {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 20px;
-      margin-top: 20px;
-    }
+.message{
+  background:rgba(255,255,255,.1);
+  padding:20px;
+  border-radius:20px;
+  margin-top:20px;
+}
 
-    .counter {
-      margin-top: 25px;
-      padding: 20px;
-      border-radius: 20px;
-      background: rgba(255, 105, 150, 0.15);
-    }
+.counter{
+  margin-top:25px;
+  padding:20px;
+  border-radius:20px;
+  background:rgba(255,105,150,.15);
+}
 
-    .counter strong {
-      font-size: 24px;
-      color: #ffd1e1;
-    }
+.counter strong{
+  font-size:24px;
+  color:#ffd1e1;
+}
 
-    button {
-      border: none;
-      padding: 15px 25px;
-      border-radius: 30px;
-      background: #ff4f91;
-      color: white;
-      font-size: 17px;
-      cursor: pointer;
-      margin-top: 20px;
-      box-shadow: 0 5px 20px rgba(255, 79, 145, 0.4);
-    }
+button{
+  border:none;
+  padding:15px 25px;
+  border-radius:30px;
+  background:#ff4f91;
+  color:#fff;
+  font-size:17px;
+  cursor:pointer;
+  margin-top:20px;
+  box-shadow:0 5px 20px rgba(255,79,145,.4);
+}
 
-    button:active {
-      transform: scale(0.95);
-    }
+button:active{
+  transform:scale(.95);
+}
 
-    #surpresa {
-      display: none;
-      margin-top: 25px;
-      padding: 20px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 20px;
-      animation: aparecer 1s ease;
-    }
+#surpresa{
+  display:none;
+  margin-top:25px;
+  padding:20px;
+  background:rgba(255,255,255,.07);
+  border-radius:20px;
+  animation:aparecer 1s ease;
+}
 
-    @keyframes aparecer {
-      from {
-        opacity: 0;
-        transform: scale(0.8);
-      }
+@keyframes aparecer{
+  from{
+    opacity:0;
+    transform:scale(.8);
+  }
 
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
 
-    .final {
-      margin-top: 35px;
-      font-size: 20px;
-      color: #ffd1e1;
-    }
-  </style>
+.declaracao{
+  padding:22px 16px;
+  margin:5px 0 28px;
+  border-radius:22px;
+  background:linear-gradient(
+    145deg,
+    rgba(255,79,145,.2),
+    rgba(255,255,255,.08)
+  );
+  border:1px solid rgba(255,182,210,.35);
+}
+
+.declaracao h2{
+  margin-top:0;
+  font-size:27px;
+}
+
+.declaracao p{
+  font-size:18px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.gallery img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  border-radius:16px;
+  border:2px solid rgba(255,182,210,.5);
+  box-shadow:0 5px 18px rgba(0,0,0,.3);
+}
+
+.video-box{
+  margin-top:25px;
+}
+
+.video-box video{
+  width:100%;
+  border-radius:18px;
+  border:2px solid #ff7eae;
+  box-shadow:0 8px 30px rgba(255,79,145,.25);
+  background:#000;
+}
+
+.final{
+  margin-top:35px;
+  font-size:20px;
+  color:#ffd1e1;
+}
+
+@media(min-width:560px){
+  .gallery{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="hearts">
-    <div class="heart" style="left:5%; animation-delay:0s;">❤️</div>
-    <div class="heart" style="left:20%; animation-delay:2s;">💕</div>
-    <div class="heart" style="left:40%; animation-delay:4s;">💗</div>
-    <div class="heart" style="left:60%; animation-delay:1s;">💖</div>
-    <div class="heart" style="left:80%; animation-delay:3s;">❤️</div>
-    <div class="heart" style="left:90%; animation-delay:5s;">💕</div>
+<div class="hearts">
+
+  <div class="heart" style="left:5%;animation-delay:0s">
+    ❤️
   </div>
 
-  <div class="card">
+  <div class="heart" style="left:20%;animation-delay:2s">
+    💕
+  </div>
 
-    <div class="heart-big">❤️</div>
+  <div class="heart" style="left:40%;animation-delay:4s">
+    💗
+  </div>
 
-    <h1>Para você, meu amor</h1>
+  <div class="heart" style="left:60%;animation-delay:1s">
+    💖
+  </div>
 
-    <p>
-      Eu fiz esse cantinho especialmente para você.
-      Não é apenas uma página...
-      é um pedacinho dos meus sentimentos colocado aqui.
-    </p>
+  <div class="heart" style="left:80%;animation-delay:3s">
+    ❤️
+  </div>
 
-    <div class="message">
-      <h2>💌 Uma mensagem para você</h2>
+  <div class="heart" style="left:90%;animation-delay:5s">
+    💕
+  </div>
 
-      <p>
-        Talvez eu nem consiga colocar em palavras tudo aquilo
-        que sinto por você.
-      </p>
+</div>
 
-      <p>
-        Mas quero que saiba que você é uma pessoa muito especial
-        para mim e que cada momento ao seu lado se torna uma
-        lembrança que eu quero guardar para sempre. ❤️
-      </p>
+<div class="card">
 
-      <p>
-        Eu escolheria você novamente, todos os dias.
-      </p>
-    </div>
+  <div class="heart-big">
+    ❤️
+  </div>
 
-    <div class="counter">
+  <h1>
+    Para ELOÁ BIANCA GOULART, meu amor ❤️
+  </h1>
 
-      <h2>🥰 Nosso tempo juntos</h2>
+  <p>
+    Eu fiz esse cantinho especialmente para você.
+    Não é apenas uma página...
+    é um pedacinho dos meus sentimentos colocado aqui.
+  </p>
 
-      <p>
-        Desde o dia em que nossas histórias se encontraram,
-        muita coisa mudou.
-      </p>
+  <div class="message">
 
-      <strong id="tempo">Carregando...</strong>
-
-    </div>
-
-    <h2>💖 Uma pequena surpresa</h2>
+    <h2>
+      💌 Uma mensagem para você
+    </h2>
 
     <p>
-      Clique no botão abaixo...
+      Talvez eu nem consiga colocar em palavras tudo aquilo
+      que sinto por você.
     </p>
 
-    <button onclick="mostrarSurpresa()">
-      💌 Abrir minha surpresa
-    </button>
+    <p>
+      Mas quero que saiba que você é uma pessoa muito especial
+      para mim e que cada momento ao seu lado se torna uma
+      lembrança que eu quero guardar para sempre. ❤️
+    </p>
 
-    <div id="surpresa">
-
-      <h2>🔐 Só para você</h2>
-
-      <p>
-        Se eu pudesse escolher um lugar para estar agora,
-        seria ao seu lado.
-      </p>
-
-      <p>
-        Obrigado por fazer parte da minha vida.
-        Eu te amo. ❤️
-      </p>
-
-      <div style="font-size:45px;">
-        💕 💖 💗 💘 💝
-      </div>
-
-    </div>
-
-    <div class="final">
-      Feito com todo meu amor ❤️
-    </div>
+    <p>
+      Eu escolheria você novamente, todos os dias.
+    </p>
 
   </div>
 
-  <script>
+  <div class="counter">
 
-    /*
-      COLOQUE AQUI A DATA EM QUE VOCÊS COMEÇARAM A NAMORAR.
+    <h2>
+      🥰 O tempo desde que te conheci
+    </h2>
 
-      Exemplo:
-      const inicio = new Date("2025-06-15T00:00:00");
-    */
+    <p>
+      Desde o dia 23/07/2026, quando eu conheci você,
+      minha história ficou ainda mais especial. ❤️
+    </p>
 
-    const inicio = new Date("2025-01-01T00:00:00");
+    <strong id="tempo">
+      Carregando...
+    </strong>
 
-    function atualizarTempo() {
+  </div>
 
-      const agora = new Date();
+  <h2>
+    💖 Uma pequena surpresa
+  </h2>
 
-      let diferenca = agora - inicio;
+  <p>
+    Clique no botão abaixo...
+  </p>
 
-      if (diferenca < 0) {
-        document.getElementById("tempo").innerHTML =
-          "Nosso contador começa em breve ❤️";
-        return;
-      }
+  <button onclick="mostrarSurpresa()">
+    💌 Abrir minha surpresa
+  </button>
 
-      const segundos = Math.floor(diferenca / 1000);
+  <div id="surpresa">
 
-      const dias = Math.floor(segundos / 86400);
+    <div class="declaracao">
 
-      const horas = Math.floor(
-        (segundos % 86400) / 3600
-      );
+      <h2>
+        💌 Antes de ver nossas fotos...
+      </h2>
 
-      const minutos = Math.floor(
-        (segundos % 3600) / 60
-      );
+      <p>
+        Meu amor, cada foto que você vai ver aqui
+        guarda um pedacinho da nossa história.
+      </p>
 
-      const seg = segundos % 60;
+      <p>
+        Eu amo nossos momentos, nossas brincadeiras,
+        nossos sorrisos e até nossas maluquices. ❤️
+      </p>
 
-      document.getElementById("tempo").innerHTML =
-        dias + " dias, " +
-        horas + " horas, " +
-        minutos + " minutos e " +
-        seg + " segundos ❤️";
-    }
+      <p>
+        Se eu pudesse guardar uma coisa para sempre,
+        seria a sensação de estar ao seu lado.
+        Obrigado por existir e por fazer parte da minha vida.
+      </p>
 
-    atualizarTempo();
+      <p>
+        <strong>
+          Eu te amo mais do que consigo explicar.
+          Você é meu lugar favorito. 💗
+        </strong>
+      </p>
 
-    setInterval(atualizarTempo, 1000);
+    </div>
 
-    function mostrarSurpresa() {
+    <h2>
+      📸 Nossos momentos
+    </h2>
 
-      const surpresa = document.getElementById("surpresa");
+    <p>
+      Algumas lembranças que eu quero guardar para sempre. ❤️
+    </p>
+    <div class="gallery">
 
-      surpresa.style.display = "block";
+      <img src="foto1.jpg" alt="Nosso momento">
+      <img src="foto2.jpg" alt="Nosso momento">
+      <img src="foto3.jpg" alt="Nosso momento">
+      <img src="foto4.jpg" alt="Nosso momento">
+      <img src="foto5.jpg" alt="Nosso momento">
+      <img src="foto6.jpg" alt="Nosso momento">
+      <img src="foto7.jpg" alt="Nosso momento">
+      <img src="foto8.jpg" alt="Nosso momento">
+      <img src="foto9.jpg" alt="Nosso momento">
+      <img src="foto10.jpg" alt="Nosso momento">
+      <img src="foto11.jpg" alt="Nosso momento">
+      <img src="foto12.jpg" alt="Nosso momento">
+      <img src="foto13.jpg" alt="Nosso momento">
+      <img src="foto14.jpg" alt="Nosso momento">
+      <img src="foto15.jpg" alt="Nosso momento">
+      <img src="foto16.jpg" alt="Nosso momento">
+      <img src="foto17.jpg" alt="Nosso momento">
+      <img src="foto18.jpg" alt="Nosso momento">
+      <img src="foto19.jpg" alt="Nosso momento">
 
-    }
+    </div>
 
-  </script>
+    <div class="video-box">
+
+      <h2>
+        🎥 E por último... nosso vídeo
+      </h2>
+
+      <p>
+        Porque algumas lembranças ficam ainda mais especiais
+        quando a gente pode reviver cada segundo. 💕
+      </p>
+
+      <video controls playsinline preload="metadata">
+
+        <source src="nosso-video.mp4" type="video/mp4">
+
+        Seu navegador não conseguiu reproduzir o vídeo.
+
+      </video>
+
+    </div>
+
+    <div style="font-size:45px;margin-top:25px">
+      💕 💖 💗 💘 💝
+    </div>
+
+  </div>
+
+  <div class="final">
+    Feito com todo meu amor ❤️
+  </div>
+
+</div>
+<script>
+
+const inicio = new Date("2026-07-23T00:00:00");
+
+function atualizarTempo() {
+
+  const agora = new Date();
+
+  let diferenca = agora - inicio;
+
+  if (diferenca < 0) {
+
+    document.getElementById("tempo").innerHTML =
+      "Nosso contador começa em breve ❤️";
+
+    return;
+  }
+
+  const segundos = Math.floor(diferenca / 1000);
+
+  const dias = Math.floor(segundos / 86400);
+
+  const horas = Math.floor(
+    (segundos % 86400) / 3600
+  );
+
+  const minutos = Math.floor(
+    (segundos % 3600) / 60
+  );
+
+  const seg = segundos % 60;
+
+  document.getElementById("tempo").innerHTML =
+    dias + " dias, " +
+    horas + " horas, " +
+    minutos + " minutos e " +
+    seg + " segundos ❤️";
+}
+
+atualizarTempo();
+
+setInterval(atualizarTempo, 1000);
+
+
+function mostrarSurpresa() {
+
+  const surpresa =
+    document.getElementById("surpresa");
+
+  surpresa.style.display = "block";
+
+  surpresa.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+}
+
+</script>
 
 </body>
 </html>
