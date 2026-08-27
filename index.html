@@ -297,9 +297,9 @@ button:active{
     💌 para a mulher que eu amo 💌
   </button>
 
-    <audio id="musica" preload="auto">
-      <source src="Vem Cá(MP3_160K).mp3" type="audio/mpeg">
-    </audio>
+  <audio id="musica" preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
 
   <div id="surpresa">
 
@@ -344,61 +344,42 @@ button:active{
 
     <div class="gallery">
 
-      <!-- 1 -->
       <img src="IMG-20260802-WA0046.jpg" alt="Nosso momento">
 
-      <!-- 2 -->
       <img src="IMG-20260802-WA0048.jpg" alt="Nosso momento">
 
-      <!-- 3 -->
       <img src="IMG-20260806-WA0006.jpg" alt="Nosso momento">
 
-      <!-- 4 -->
       <img src="IMG-20260806-WA0012.jpg" alt="Nosso momento">
 
-      <!-- 5 -->
       <img src="IMG-20260814-WA0015.jpg" alt="Nosso momento">
 
-      <!-- 6 -->
       <img src="IMG-20260814-WA0020.jpg" alt="Nosso momento">
 
-      <!-- 7 -->
       <img src="IMG-20260815-WA0003.jpg" alt="Nosso momento">
 
-      <!-- 8 -->
       <img src="IMG-20260815-WA0004.jpg" alt="Nosso momento">
 
-      <!-- 9 -->
       <img src="IMG-20260815-WA0006(1).jpg" alt="Nosso momento">
 
-      <!-- 10 -->
       <img src="IMG-20260815-WA0010.jpg" alt="Nosso momento">
 
-      <!-- 11 -->
       <img src="IMG-20260815-WA0011.jpg" alt="Nosso momento">
 
-      <!-- 12 -->
       <img src="IMG-20260815-WA0013.jpg" alt="Nosso momento">
 
-      <!-- 13 -->
       <img src="IMG-20260815-WA0016.jpg" alt="Nosso momento">
 
-      <!-- 14 -->
       <img src="IMG-20260822-WA0030.jpg" alt="Nosso momento">
 
-      <!-- 15 -->
       <img src="IMG-20260822-WA0031.jpg" alt="Nosso momento">
 
-      <!-- 16 -->
       <img src="foto1.jpg" alt="Nosso momento">
 
-      <!-- 17 -->
       <img src="foto2.jpg" alt="Nosso momento">
 
-      <!-- 18 -->
       <img src="foto3.jpg" alt="Nosso momento">
 
-      <!-- 19 -->
       <img src="foto4.jpg" alt="Nosso momento">
 
     </div>
@@ -420,8 +401,6 @@ button:active{
           src="VID-20260810-WA0007.mp4"
           type="video/mp4"
         >
-
-        
 
       </video>
 
@@ -495,8 +474,8 @@ function mostrarSurpresa(){
 
   musica.currentTime = 0;
 
-  musica.play().catch(function(){
-    console.log("Não foi possível iniciar a música automaticamente.");
+  musica.play().catch(function(erro){
+    console.log("Não foi possível iniciar a música:", erro);
   });
 
   surpresa.scrollIntoView({
