@@ -297,6 +297,10 @@ button:active{
     💌 para a mulher que eu amo 💌
   </button>
 
+    <audio id="musica" preload="auto">
+      <source src="Vem Cá(MP3_160K).mp3" type="audio/mpeg">
+    </audio>
+
   <div id="surpresa">
 
     <div class="declaracao">
@@ -484,7 +488,16 @@ function mostrarSurpresa(){
   const surpresa =
     document.getElementById("surpresa");
 
+  const musica =
+    document.getElementById("musica");
+
   surpresa.style.display = "block";
+
+  musica.currentTime = 0;
+
+  musica.play().catch(function(){
+    console.log("Não foi possível iniciar a música automaticamente.");
+  });
 
   surpresa.scrollIntoView({
     behavior:"smooth",
